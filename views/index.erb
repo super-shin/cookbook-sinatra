@@ -1,0 +1,21 @@
+<h1>Recipes</h1>
+
+<ul>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <%= recipe.name %> - <%= recipe.description %>
+      <a href="/delete/<%= @recipes.index(recipe) %>">Delete</a>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/new">Add New Recipe</a>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index| %>
+    <li>
+      <%= recipe.name %> - <%= recipe.description %>
+      <a href="/delete/<%= index %>">Delete</a>
+    </li>
+  <% end %>
+</ul>
